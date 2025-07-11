@@ -20,4 +20,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StageClear()
+    {
+        Debug.Log("Stage cleared, Score: " + score);
+    }
 }

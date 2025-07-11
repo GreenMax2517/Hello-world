@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class Finish_Flag : MonoBehaviour
 {
-    public int value = 1;
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != LayerMask.NameToLayer("Player"))
         {
             return;
         }
-
-        gameObject.SetActive(false);
-        GameManager.instance.score += value;
-        //Debug.Log(collision.name + "客 面倒窃");
+            GameManager.instance.StageClear();
+            gameObject.SetActive(true);
+            //Debug.Log(collision.name + "客 面倒窃");
+        }
     }
-}
