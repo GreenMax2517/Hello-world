@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator animator;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,4 +54,10 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+public void Die()
+    {
+        GameManager.instance.stages[GameManager.instance.currentStageIndex].Restart();
+    }
+
 }
